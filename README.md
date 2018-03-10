@@ -5,7 +5,9 @@ Nemo not yet implemented.
 
 # Requirements
 Nautilus
+
 Wine to run sigcheck.exe
+
 sigcheck.exe by Sysinternals https://docs.microsoft.com/en-us/sysinternals/downloads/sigcheck
 
 First download Sigcheck from Sysinternals and place sigcheck.exe in `~/.sigcheck`. The script runs `~/.sigcheck/sigcheck.exe` using wine.
