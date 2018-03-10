@@ -18,3 +18,6 @@ Place the extension script in this location `/home/design/.local/share/nautilus-
 Open the properties of Windows executables using Nautilus. You should see a Sigcheck tab in the Properties menu. Now click the button which should read something like `Click to get Sigcheck data!`.
 
 If everything is setup correctly you should see the signature details of the executable.
+
+# Screenshots
+![Sigcheck extension Nautilus and Nemo](http://pix.toile-libre.org/upload/original/1520685857.png)
