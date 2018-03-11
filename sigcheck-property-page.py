@@ -43,10 +43,8 @@ class ButtonPropertyPage(GObject.GObject, Nautilus.PropertyPageProvider):
 
         self.sw = Gtk.ScrolledWindow()
 
-
         self.texty = Gtk.TextView()
 
-        
         self.sw.add(self.texty)
         self.sw.show()
         self.texty.show()
@@ -62,15 +60,15 @@ class ButtonPropertyPage(GObject.GObject, Nautilus.PropertyPageProvider):
     def get_sigcheck(self, widget):
 
         try:
-	    output = subprocess.check_output(["wine", sigcheckexe_path, str(self.filename).replace("/", "\\")])
-	except subprocess.CalledProcessError as e:
-	    output = e.output
+            output = subprocess.check_output(["wine", sigcheckexe_path, str(self.filename).replace("/", "\\"), "-nobanner"])
+        except subprocess.CalledProcessError as e:
+            output = e.output
 
-	    if "wine: cannot find" in str(output):
-		outputy = """"Failed to find sigcheck.exe!
+            if "wine: cannot find" in str(output):
+                output = """"Failed to find sigcheck.exe!
 Did you place sigcheck.exe in '~/.sigcheck' directory?
 First Download sigcheck from Sysinternals and extract the zip to find sigcheck.exe and then copy it to '~/.sigcheck'.
-The full path of sigcheck should be '~/.sigcheck/sigcheck.exe' where ~/ is the home directory of the current user"""
+The full path of sigcheck.exe should be '~/.sigcheck/sigcheck.exe' where ~/ is the home directory of the current user"""
 
-	finally:
-            self.textbuffer.set_text(self.filename + "\n" + output)
+        finally:
+            self.textbuffer.set_text(self.filename + "\n"*2 + output)
