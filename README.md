@@ -20,4 +20,4 @@ Open the properties of Windows executables using Nautilus. You should see a Sigc
 If everything is setup correctly you should see the signature details of the executable.
 
 # Screenshots
-![Sigcheck extension Nautilus and Nemo](http://pix.toile-libre.org/upload/original/1520685857.png)
+![Sigcheck extension Nautilus and Nemo](http://pix.toile-libre.org/upload/original/1520747342.png)
