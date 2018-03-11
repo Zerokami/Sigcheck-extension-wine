@@ -41,12 +41,18 @@ class ButtonPropertyPage(GObject.GObject, Nautilus.PropertyPageProvider):
         self.button.connect("clicked", self.get_sigcheck)
         self.button.show()
 
+        self.sw = Gtk.ScrolledWindow()
+
+
         self.texty = Gtk.TextView()
 
+        
+        self.sw.add(self.texty)
+        self.sw.show()
         self.texty.show()
 
         self.boxy.pack_start(self.button, False, False, 0)
-        self.boxy.pack_end(self.texty, True, True, 0)
+        self.boxy.pack_end(self.sw, True, True, 0)
 
         self.textbuffer = self.texty.get_buffer()
 
